@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN PAGE</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background: url('loginback.jpg');
+            background-repeat: no-repeat;
+            background-position: absolute;
+            background-size: 100vw 100vh;
+            display: flex;
+        }
+        
+        .signup{
+            background-color: blue;
+            width: 50%;
+            height: 80%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 10% auto;
+            border-radius: 50px;
+        }
+        #signup_text{
+            font-size: 400%;
+            margin-top: 5%;
+        }
+        .detail{
+            height: 15%;
+            width: 60%;
+            height: 7vh;
+            margin: 5vh;
+            border: 5px solid brown;
+            border-radius: 25px;
+        }
+        .button{
+            height: 5vh;
+            width: 30%;
+            margin-bottom: 5vh;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="signup">
+        <p id="signup_text">LOG IN</p>
+        <input type="text" class="detail" id="user_name" placeholder="Email ID">
+        <input type="password" class="detail" id="password" placeholder="password">
+        <input type="submit" value="LOGIN" class="button">
+    </div>
+
+
+    
+</body>
+</html>

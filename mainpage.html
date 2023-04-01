@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Mental Health Website</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js"></script>
+    <style>
+        /* Header Styling */
+        /* Header Styling */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-image: url('back.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        header {
+            background-color: black;
+            color: white;
+            padding: 20px;
+            display: flex;
+            height: 6vh;
+            width: 100%;
+            position: fixed;
+            z-index: 2;
+        }
+
+        #logo {
+            height: auto;
+            border-radius: 10%;
+        }
+
+        h1 {
+            margin: auto 1%;
+            font-size: 36px;
+        }
+
+        nav {
+            display: flex;
+            font-size: 150%;
+            align-items: center;
+            justify-content: flex-end;
+            margin-top: 0.5%;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            margin-left: 10vh;
+        }
+
+        nav li {
+            float: left;
+        }
+
+        nav li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        nav li a:hover {
+            color: aqua;
+        }
+
+        nav li a:hover:not(a:hover) {
+            color: red;
+        }
+
+        #search {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            float: right;
+        }
+
+        #searchbar {
+            padding: 5px;
+            border: none;
+            border-radius: 3px;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+            border-radius: 20px;
+            width: 50%;
+        }
+
+        #go {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            padding: 5px 10px;
+            margin-left: -5px;
+            cursor: pointer;
+        }
+
+        .buttons-container {
+            margin-left: 30vw;
+            margin-top: 1vh;
+        }
+
+        .signup-btn,
+        .login-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            margin-left: 0;
+        }
+
+        .signup-btn {
+            background-color: #007bff;
+            color: #fff;
+            margin-right: 10px;
+        }
+
+        .login-btn {
+            background-color: #fff;
+            color: #007bff;
+            border: 1px solid #007bff;
+        }
+
+
+        /* Main Styling */
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            position: absolute;
+            top: 7%;
+            left: 10vw;
+            z-index: 1;
+            font-size: 176.39%;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-top: 40px;
+        }
+
+        ul {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        form label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input,
+        textarea {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: none;
+            margin-bottom: 20px;
+        }
+
+        textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        button[type="submit"] {
+            background-color: #006699;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #bmi,#mbti{
+            float: right;
+            font-size: large;
+            margin: auto 5%;
+            font-size: 200%;
+            color: #fff;
+        }
+
+        /* Responsive Styling */
+        @media (max-width: 768px) {
+            header {
+                text-align: center;
+            }
+
+            nav li {
+                float: none;
+                display: inline-block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="logo.jpg" alt="LOGO" id="logo">
+        <h1>MindEase</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#experts">Experts</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <form id="search">
+            <input type="text" id="searchbar" placeholder="Search...">
+            <button type="submit" id="go">Go</button>
+        </form>
+        <div class="buttons-container">
+            <a href="signuppage.html" class="signup-btn">Sign up</a>
+            <a href="login.html" class="login-btn">Log in</a>
+        </div>
+    </header>
+    <main>
+        <section id="about">
+            <h2>About Us</h2>
+            <p>Welcome to our meditation website! We believe that meditation is a powerful tool that can help you find inner peace and improve your overall well-being. Our website offers a variety of resources to help you learn about meditation, including guided meditations, articles, and videos. Whether you're new to meditation or an experienced practitioner, we're here to support you on your journey. Our mission is to make meditation accessible to everyone, regardless of their background or experience. Join us and discover the transformative power of meditation today!</p>
+        </section>
+        <section id="services">
+            <h2>Our Services</h2>
+            <ul>
+                <li>Individual therapy</li>
+                <li>Group therapy</li>
+                <li>Family therapy</li>
+                <li>Couples therapy</li>
+                <li>Online therapy</li>
+            </ul>
+        </section>
+        <section id="experts">
+            <h2>Our Experts</h2>
+            <ul>
+                <li>Dr. Jane Doe, PhD, licensed psychologist</li>
+                <li>Dr. John Smith, MD, psychiatrist</li>
+                <li>Ms. Susan Lee, LMFT, licensed marriage and family therapist</li>
+            </ul>
+            <p>To connect with our experts, please fill out the form below:</p>
+            <form id="contact-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Phone: 555-1234</p>
+            <p>Email: info@mentalhealth.com</p>
+            <p>Address: 123 Main St, Anytown, USA</p>
+        </section>
+        <a href="bmi.html" target="_blank" id="bmi">CALCULATE BMI</a>
+        <a href="mbti.html" target="_blank" id="mbti">MBTI </a>
+    </main>
+</body>
+
+</html>

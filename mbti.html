@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>MBTI Quiz</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        body {
+            background-color: rgb(240, 92, 240);
+            background-image: radial-gradient(#0d0d0d, #000);
+            background-size: 3px 3px;
+            background-position: center;
+        }
+
+        .quiz-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 1s ease;
+            box-shadow: #000;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        h1 {
+            text-align: center;
+            color: #1e90ff;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .question {
+            margin-bottom: 10px;
+            font-size: 18px;
+            color: #555;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        button[type="submit"] {
+            display: block;
+            margin: 20px auto 0;
+            padding: 10px 20px;
+            background-color: #1e90ff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0066cc;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="quiz-container">
+        <h1>MBTI Quiz</h1>
+        <p>Answer the following questions to find your MBTI type:</p>
+        <form id="quiz-form">
+            <div class="question">
+                <p>Question 1: Do you prefer to spend time alone or with others?</p>
+                <input type="radio" name="q1" value="introverted" required> Introverted
+                <input type="radio" name="q1" value="extroverted"> Extroverted
+            </div>
+            <div class="question">
+                <p>Question 2: Do you prefer to focus on details or the big picture?</p>
+                <input type="radio" name="q2" value="sensing" required> Sensing
+                <input type="radio" name="q2" value="intuition"> Intuition
+            </div>
+            <div class="question">
+                <p>Question 3: Do you make decisions based on logic or feelings?</p>
+                <input type="radio" name="q3" value="thinking" required> Thinking
+                <input type="radio" name="q3" value="feeling"> Feeling
+            </div>
+            <div class="question">
+                <p>Question 4: Do you prefer to have a plan or be spontaneous?</p>
+                <input type="radio" name="q4" value="judging" required> Judging
+                <input type="radio" name="q4" value="perceiving"> Perceiving
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="result-container"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+<script>
+    const quizForm = document.getElementById('quiz-form');
+    const resultContainer = document.getElementById('result-container');
+
+    quizForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const formData = new FormData(quizForm);
+        const answers = {};
+
+        for (let pair of formData.entries()) {
+            answers[pair[0]] = pair[1];
+        }
+
+        const type = calculateType(answers);
+
+        resultContainer.innerHTML = `
+    <p>Your MBTI type is: <strong>${type}</strong></p>
+  `;
+    });
+
+    function calculateType(answers) {
+        let type = '';
+
+        if (answers.q1 === 'introverted') {
+            type += 'I';
+        } else {
+            type += 'E';
+        }
+
+        if (answers.q2 === 'sensing') {
+            type += 'S';
+        } else {
+            type += 'N';
+        }
+
+        if (answers.q3 === 'thinking') {
+            type += 'T';
+        } else {
+            type += 'F';
+        }
+
+        if (answers.q4 === 'judging') {
+            type += 'J';
+        } else {
+            type += 'P';
+        }
+
+        return type;
+    }
+</script>
+
+</html>
